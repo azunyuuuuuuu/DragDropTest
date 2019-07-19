@@ -3,15 +3,19 @@
 @inherits DragTestBase
 
 <div class="drag-container" @oncontextmenu="@(e=>Contexting(e))">
-    <div class="drag-item" draggable="true"
-        @ondragstart="@Dragging"
-        @ondrag="@Dragging"
-        @ondragend="@Dragging"
-        @ondragover="@Dragging"
-        @ondragenter="@Dragging"
-        @ondragleave="@Dragging"
-        >
 
-    </div>
+    @foreach (var node in Nodes)
+    {
+        <div style="@($"left: {node.Position.X}px; top: {node.Position.Y}px;")" class="drag-item" draggable="true"
 
+            @ondragstart="@DragStart"
+            @ondragend="@(e => DragEnd(e, node))"
+
+            @ondrag="@Dragging"
+            @ondragover="@Dragging"
+            @ondragenter="@Dragging"
+            @ondragleave="@Dragging"
+            >
+        </div>
+    }
 </div>

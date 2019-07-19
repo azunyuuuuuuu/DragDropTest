@@ -145,12 +145,14 @@ app {
 }
 
 .drag-container {
+    position: relative;
     width: 600px;
     height: 450px;
     background-color: green;
 }
 
 .drag-item {
+    position: absolute;
     width: 40px;
     height: 40px;
     background-color: red;
