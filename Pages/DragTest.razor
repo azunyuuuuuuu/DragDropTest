@@ -1,0 +1,17 @@
+﻿@page "/dragtest"
+
+@inherits DragTestBase
+
+<div class="drag-container" @oncontextmenu="@(e=>Contexting(e))">
+    <div class="drag-item" draggable="true"
+        @ondragstart="@Dragging"
+        @ondrag="@Dragging"
+        @ondragend="@Dragging"
+        @ondragover="@Dragging"
+        @ondragenter="@Dragging"
+        @ondragleave="@Dragging"
+        >
+
+    </div>
+
+</div>
